@@ -1,0 +1,369 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Paint Cost Calculator — Parker Paints</title>
+<meta name="description" content="Estimate exactly how much paint you need and what it will cost — before you spend a single dollar on materials." />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Poppins:wght@600;700&family=DM+Sans:wght@400;500;700&family=Inter:wght@400;500;600;700;800&family=Epilogue:wght@400;500;600;700&display=swap" rel="stylesheet" />
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Crect width='24' height='24' rx='5' fill='%23193862'/%3E%3Cpath d='M6 6h9l5 5v7H6z' stroke='white' stroke-width='2' fill='none'/%3E%3C/svg%3E" />
+<link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+<div class="calc-hero">
+  <div class="calc-hero__stripe">
+    <span style="background:#f2aebf;"></span><span style="background:#f28c3d;"></span><span style="background:#f5c842;"></span><span style="background:#6bae75;"></span><span style="background:#4a90d9;"></span><span style="background:#8e6bbf;"></span><span style="background:#193862;"></span>  </div>
+  <header class="site-header site-header--solid">
+  <div class="site-header__inner">
+    <a href="index.html" class="brand">
+      <span class="brand__mark">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M4 4h10l6 6v10H4z"/><path d="M14 4v6h6"/></svg>
+      </span>
+      <span class="brand__name">PARKER PAINTS</span>
+    </a>
+
+    <nav class="site-nav">
+      <ul>
+                  <li><a href="index.html" class="">Home</a></li>
+                  <li><a href="about.html" class="">About</a></li>
+                  <li><a href="products.html" class="">Products</a></li>
+                  <li><a href="colour-catalogue.html" class="">Colour Catalogue</a></li>
+                  <li><a href="paint-calculator.html" class="is-active">Paint Calculator</a></li>
+                  <li><a href="faq.html" class="">FAQ</a></li>
+                  <li><a href="contact.html" class="">Contact</a></li>
+              </ul>
+    </nav>
+
+    <button class="nav-toggle" aria-label="Open menu" data-nav-open>
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6h16M4 12h16M4 18h16"/></svg>
+    </button>
+  </div>
+</header>
+
+<div class="nav-drawer">
+  <div class="nav-drawer__header">
+    <a href="index.html" class="brand">
+      <span class="brand__mark">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M4 4h10l6 6v10H4z"/><path d="M14 4v6h6"/></svg>
+      </span>
+      <span class="brand__name">PARKER PAINTS</span>
+    </a>
+    <button class="nav-drawer__close" aria-label="Close menu" data-nav-close>
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 6 6 18M6 6l12 12"/></svg>
+    </button>
+  </div>
+  <ul class="nav-drawer__links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="products.html">Products</a></li>
+          <li><a href="colour-catalogue.html">Colour Catalogue</a></li>
+          <li><a href="paint-calculator.html">Paint Calculator</a></li>
+          <li><a href="faq.html">FAQ</a></li>
+          <li><a href="contact.html">Contact</a></li>
+      </ul>
+</div>
+  <div class="container text-center">
+    <h1 class="calc-hero__title">Paint Cost<br><span>Calculator</span></h1>
+    <p class="calc-hero__sub">Estimate exactly how much paint you need and what it will cost &mdash; before you spend a single dollar on materials.</p>
+    <div class="calc-hero__pills">
+      <span>&#127968; Interior Walls</span>
+      <span>&#127807; Exterior Walls</span>
+      <span>&#128682; Doors &amp; Trims</span>
+      <span>&#9889; Instant Results</span>
+    </div>
+  </div>
+</div>
+
+<div class="calc-tabs">
+  <div class="container calc-tabs__inner">
+    <div class="calc-tabs__group">
+      <span>Paint Type:</span>
+      <div class="pill-toggle" data-toggle="paint-type">
+        <button type="button" class="is-active" data-value="interior">Interior Walls</button>
+        <button type="button" data-value="exterior">Exterior Walls</button>
+        <button type="button" data-value="doors">Doors &amp; Trims</button>
+      </div>
+    </div>
+    <div class="calc-tabs__group">
+      <span>Mode:</span>
+      <div class="pill-toggle" data-toggle="calc-mode">
+        <button type="button" class="is-active" data-value="basic">Basic</button>
+        <button type="button" data-value="advanced">Advanced</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<section class="section" style="background:var(--bg-cream-2);">
+  <div class="container calc-body">
+    <div class="calc-panel">
+      <h2>Tell us about your space</h2>
+      <p class="calc-panel__sub">Fill in your room details and we&rsquo;ll calculate everything instantly.</p>
+
+      <div class="calc-field-group">
+        <label class="calc-field-group__label">Room Dimensions</label>
+        <p class="calc-field-group__help">Enter the length, width and ceiling height of the room.</p>
+        <div class="calc-dims">
+          <div class="calc-input"><label>Room Length</label><div><input type="number" id="calcLength" value="5" step="0.1"><span>m</span></div></div>
+          <div class="calc-input"><label>Room Width</label><div><input type="number" id="calcWidth" value="4" step="0.1"><span>m</span></div></div>
+          <div class="calc-input"><label>Ceiling Height</label><div><input type="number" id="calcHeight" value="2.7" step="0.1"><span>m</span></div></div>
+        </div>
+      </div>
+
+      <div class="calc-divider-text">&mdash; or use the area slider &mdash;</div>
+
+      <div class="calc-field-group">
+        <label class="calc-field-group__label">Total Carpet Area</label>
+        <input type="range" id="calcAreaSlider" min="0" max="6000" value="0" class="calc-slider">
+        <div class="calc-slider__labels"><span>0 sq ft</span><span>6,000 sq ft</span></div>
+        <div class="calc-slider__chip">Selected: <b id="calcAreaChipVal">Using dimensions above</b></div>
+      </div>
+
+      <div class="calc-field-group">
+        <label class="calc-field-group__label">Deductions</label>
+        <p class="calc-field-group__help">Subtract doors and windows from the total paintable area.</p>
+        <div class="calc-stepper-row">
+          <div class="calc-stepper"><label>No. of Doors<span>&asymp; 1.8 &times; 2.1 m each</span></label><div><button type="button" data-step-minus="doors">&minus;</button><span id="calcDoors">2</span><button type="button" data-step-plus="doors">+</button></div></div>
+          <div class="calc-stepper"><label>No. of Windows<span>&asymp; 1.2 &times; 1.0 m each</span></label><div><button type="button" data-step-minus="windows">&minus;</button><span id="calcWindows">2</span><button type="button" data-step-plus="windows">+</button></div></div>
+          <div class="calc-stepper"><label>Extra Area (sqft)<span>Any other deduction</span></label><div><button type="button" data-step-minus="extra">&minus;</button><span id="calcExtra">2</span><button type="button" data-step-plus="extra">+</button></div></div>
+        </div>
+      </div>
+
+      <div class="calc-field-group">
+        <label class="calc-field-group__label">Wall Condition</label>
+        <p class="calc-field-group__help">Affects undercoat requirements and number of coats.</p>
+        <div class="calc-option-row" data-toggle="wall-condition">
+          <button type="button" class="calc-option is-active" data-value="new">&#127793; New Paint</button>
+          <button type="button" class="calc-option" data-value="repaint">&#128260; Re-Paint</button>
+          <button type="button" class="calc-option" data-value="repair">&#128295; Repair &amp; Paint</button>
+        </div>
+      </div>
+
+      <div class="calc-field-group">
+        <label class="calc-field-group__label">Number of Coats</label>
+        <div class="calc-option-row" data-toggle="coats">
+          <button type="button" data-value="1">1 Coat</button>
+          <button type="button" class="is-active" data-value="2">2 Coats</button>
+          <button type="button" data-value="3">3 Coats</button>
+        </div>
+      </div>
+
+      <div class="calc-actions">
+        <button type="button" class="btn btn--blue" data-calc-run>Calculate Now</button>
+        <button type="button" class="btn" style="background:var(--bg-tint);color:var(--navy);" data-calc-reset>Reset</button>
+      </div>
+    </div>
+
+    <aside class="calc-results">
+      <h3>Your Estimate</h3>
+      <p class="calc-panel__sub">Updates as you fill in the form</p>
+
+      <div class="calc-stat calc-stat--green">
+        <label>Total Paintable Area</label>
+        <div><b id="resArea">1,620</b><span>sq ft</span></div>
+        <p id="resAreaNote">After deducting 2 doors + 2 windows</p>
+      </div>
+      <div class="calc-stat calc-stat--blue">
+        <label>Paint Required</label>
+        <div><b id="resLitres">18.2</b><span>litres</span></div>
+        <p>Includes 10% wastage buffer</p>
+      </div>
+      <div class="calc-mini-stats">
+        <div><label>Coats Recommended</label><b id="resCoats">2 coats</b></div>
+        <div><label>Estimated Dry Time</label><b id="resDryTime">6 - 8 hours</b></div>
+      </div>
+
+      <h4>Cost Breakdown</h4>
+      <div class="calc-cost-lines">
+        <div class="calc-cost-line"><span>Topcoat (<span id="resCoatsInline">2</span> coats)</span><span id="resTopcoatQty">18.2 L</span><b id="resTopcoatCost">$68.40</b></div>
+        <div class="calc-cost-line"><span>Undercoat / Primer</span><span id="resUndercoatQty">9.1 L</span><b id="resUndercoatCost">$24.80</b></div>
+        <div class="calc-cost-line"><span>Brushes &amp; Roller Kit</span><span>1 set</span><b>$18.00</b></div>
+        <div class="calc-cost-line"><span>Masking Tape &amp; Drop Cloth</span><span>1 set</span><b>$12.00</b></div>
+      </div>
+
+      <div class="calc-total">
+        <label>Estimated Total (materials only)</label>
+        <b id="resTotal">$123.20</b>
+        <span>Labour not included</span>
+      </div>
+      <p class="calc-fineprint">* Estimates are indicative. Actual usage may vary +/- 10%.</p>
+      <a href="contact.html" class="btn btn--blue btn--block">Get a Full Quote</a>
+    </aside>
+  </div>
+</section>
+
+<section class="section calc-multiroom" data-mode-panel="advanced" style="background:var(--bg-cream);display:none;">
+  <div class="container">
+    <span class="eyebrow">Advanced Mode &mdash; Multi-Room Calculator</span>
+    <h2 style="font-family:var(--font-heading);font-size:32px;margin-bottom:8px;">Add Multiple Rooms</h2>
+    <p style="font-family:var(--font-ui);color:var(--text-body);margin-bottom:32px;">Calculate for your entire home &mdash; room by room &mdash; in one go.</p>
+
+    <div class="room-grid" id="roomGrid">
+            <div class="room-card">
+        <div class="room-card__bar" style="background:#f2aebf;"></div>
+        <h5>Living Room</h5>
+        <div class="room-card__fields">
+          <div><label>Length</label><span>6 m</span></div>
+          <div><label>Width</label><span>5 m</span></div>
+          <div><label>Height</label><span>2.7 m</span></div>
+        </div>
+        <div class="room-card__area">Paintable Area: <b>1,530 sq ft</b></div>
+        <button type="button" class="room-card__remove">Remove Room</button>
+      </div>
+            <div class="room-card">
+        <div class="room-card__bar" style="background:#4a90d9;"></div>
+        <h5>Master Bedroom</h5>
+        <div class="room-card__fields">
+          <div><label>Length</label><span>5 m</span></div>
+          <div><label>Width</label><span>4 m</span></div>
+          <div><label>Height</label><span>2.7 m</span></div>
+        </div>
+        <div class="room-card__area">Paintable Area: <b>1,188 sq ft</b></div>
+        <button type="button" class="room-card__remove">Remove Room</button>
+      </div>
+            <div class="room-card">
+        <div class="room-card__bar" style="background:#6bae75;"></div>
+        <h5>Kitchen</h5>
+        <div class="room-card__fields">
+          <div><label>Length</label><span>4 m</span></div>
+          <div><label>Width</label><span>3 m</span></div>
+          <div><label>Height</label><span>2.7 m</span></div>
+        </div>
+        <div class="room-card__area">Paintable Area: <b>756 sq ft</b></div>
+        <button type="button" class="room-card__remove">Remove Room</button>
+      </div>
+            <div class="room-card">
+        <div class="room-card__bar" style="background:#f5c842;"></div>
+        <h5>Bathroom</h5>
+        <div class="room-card__fields">
+          <div><label>Length</label><span>3 m</span></div>
+          <div><label>Width</label><span>2.5 m</span></div>
+          <div><label>Height</label><span>2.7 m</span></div>
+        </div>
+        <div class="room-card__area">Paintable Area: <b>472 sq ft</b></div>
+        <button type="button" class="room-card__remove">Remove Room</button>
+      </div>
+            <button type="button" class="room-card room-card--add">
+        <span>+</span>
+        <b>Add Another Room</b>
+        <p>Click to add a new room</p>
+      </button>
+    </div>
+
+    <div class="room-totals">
+      <div><label>Total Rooms</label><b>4 rooms</b></div>
+      <div><label>Total Paintable Area</label><b>3,946 sq ft</b></div>
+      <div><label>Total Paint Needed</label><b>44.0 litres</b></div>
+      <div><label>Estimated Cost</label><b>$312.40</b></div>
+    </div>
+  </div>
+</section>
+
+<section class="section" style="background:var(--bg-cream);">
+  <div class="container">
+    <span class="eyebrow">Recommended for Interior Walls</span>
+    <h2 style="font-family:var(--font-heading);font-size:32px;margin-bottom:32px;">Real products, real specs</h2>
+    <div class="showcase-grid">
+      <div class="showcase-card" style="border:2px solid var(--blue);position:relative;">
+        <span class="showcase-card__badge">&#9733; BEST MATCH</span>
+        <img src="images/product-premium-acrylic-pva.jpg" alt="" class="photo showcase-card__img">
+        <div class="showcase-card__body"><h4>Premium Acrylic PVA</h4><p>Smooth Matt &middot; 8&ndash;10 m&sup2;/L &middot; 5L/20L</p></div>
+      </div>
+      <div class="showcase-card">
+        <img src="images/product-silkshield.jpg" alt="" class="photo showcase-card__img">
+        <div class="showcase-card__body"><h4>Silkshield</h4><p>Mid Sheen &middot; 8&ndash;10 m&sup2;/L &middot; 5L/20L</p></div>
+      </div>
+      <div class="showcase-card">
+        <img src="images/product-wallshield.jpg" alt="" class="photo showcase-card__img">
+        <div class="showcase-card__body"><h4>Wallshield</h4><p>Low-Mid Sheen &middot; 8&ndash;10 m&sup2;/L &middot; 5L/20L</p></div>
+      </div>
+      <a href="products.html" class="showcase-card showcase-card--cta">
+        <p>View all<br>29 products</p>
+        <span>&rarr;</span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<section class="calc-faq">
+  <div class="container">
+    <span class="eyebrow" style="color:var(--blue);">Related Questions</span>
+    <h2>Before you start painting</h2>
+    <div class="calc-faq__grid">
+      <div>
+        <h5>How much paint do I need for my project?</h5>
+        <p>Coverage varies by product &mdash; most wall coatings cover 8&ndash;10 m&sup2;/L. Multiply your surface area by the coats needed, then divide by the coverage rate.</p>
+      </div>
+      <div>
+        <h5>How long before I can apply a second coat?</h5>
+        <p>Drying times range from 4 hours up to 16 hours depending on the product. Always check the specific product before recoating.</p>
+      </div>
+      <div>
+        <h5>What does the 10-year guarantee cover?</h5>
+        <p>Our guarantee reflects confidence in the durability and performance of Parker Paints products when applied according to the recommended surface preparation, primer, and application method.</p>
+      </div>
+    </div>
+    <a href="faq.html" class="calc-faq__link">View all FAQs &rarr;</a>
+  </div>
+</section>
+
+<div class="footer-wrap">
+  <div class="contact-band">
+    <h2>Bring your vision to life.</h2>
+    <p>From bold interiors to durable exteriors, Parker Paints helps create spaces you'll be proud of.</p>
+    <a href="colour-catalogue.html" class="btn btn--black-pill">Explore Colours</a>
+  </div>
+
+  <footer class="footer">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <span class="brand__name" style="color:var(--white);font-size:22px;">PARKER PAINTS</span>
+        <p>We manufacture high-performance coatings that combine durability, consistency and colour precision.</p>
+        <div class="footer-social">
+          <a href="#" aria-label="Twitter"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M22 5.9c-.7.3-1.5.6-2.3.7.8-.5 1.5-1.3 1.8-2.3-.8.5-1.6.8-2.6 1a4 4 0 0 0-6.9 3.7A11.5 11.5 0 0 1 3.4 4.6a4 4 0 0 0 1.3 5.4c-.7 0-1.3-.2-1.9-.5v.1a4 4 0 0 0 3.3 4 4 4 0 0 1-1.9.1 4 4 0 0 0 3.8 2.8A8.1 8.1 0 0 1 2 18.6a11.5 11.5 0 0 0 6.2 1.8c7.5 0 11.6-6.2 11.6-11.6v-.5c.8-.6 1.5-1.3 2.2-2.2Z"/></svg></a>
+          <a href="#" aria-label="Facebook"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg></a>
+          <a href="#" aria-label="Instagram"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1"/></svg></a>
+        </div>
+      </div>
+
+      <div style="display:flex;gap:64px;flex-wrap:wrap;">
+        <div class="footer-cols">
+          <div class="footer-col">
+            <h4>Pages</h4>
+            <ul>
+              <li><a href="index.html">Home</a></li>
+              <li><a href="about.html">About</a></li>
+              <li><a href="colour-catalogue.html">Colour Catalogue</a></li>
+              <li><a href="paint-calculator.html">Paint Calculator</a></li>
+              <li><a href="contact.html">Contact</a></li>
+            </ul>
+          </div>
+          <div class="footer-col">
+            <h4>Brands</h4>
+            <ul>
+              <li><a href="index.html">Parker Paints</a></li>
+              <li><a href="index.html">Bravo Paints</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="footer-newsletter">
+          <h4>Subscribe to Newsletter</h4>
+          <form class="newsletter-form" method="POST" action="php/newsletter-handler.php">
+            <input type="email" name="email" placeholder="Enter email address" required>
+            <button type="submit">Join</button>
+          </form>
+          <div class="form-status" role="status" aria-live="polite" style="color:var(--off-white);font-size:12px;margin-top:8px;"></div>
+        </div>
+      </div>
+    </div>
+
+    <hr class="footer-divider">
+    <p class="footer-bottom">&copy; Copyright 2026, All Rights Reserved by Parker Paints. Designed by Tafadzwa Kevin Chingombe</p>
+  </footer>
+</div>
+
+<script src="main.js"></script>
+</body>
+</html>
