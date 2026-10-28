@@ -14,7 +14,7 @@ larger), scene photos landscape (1600 px wide).
 | `images/hero.jpg` | Home page, full-width banner behind the headline | A freshly painted room or building exterior. Keep the left side calm, because text sits over it |
 | `images/challenge-collage.webp` | Home page, The Challenge collage | ✅ Done |
 | `images/solution-artwork.webp` | Home page, The Solution artwork | ✅ Done |
-| `images/about-hero.jpg` | About page, top | Factory, warehouse, or the team on site |
+| `images/about-hero-artwork.webp` | About page hero artwork | ✅ Done |
 | `images/team-1.jpg` | About page, team card 1 | Portrait (square), matching the name in the caption |
 | `images/team-2.jpg` | About page, team card 2 | Portrait (square) |
 | `images/team-3.jpg` | About page, team card 3 | Portrait (square) |
