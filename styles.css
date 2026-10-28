@@ -770,19 +770,12 @@ img.wall-tile__img { height: auto; }
   .page-home .feature-split:not(.feature-split--reverse) { grid-template-columns: 677px 1fr; gap: 56px; }
 }
 
-/* The Solution artwork (Figma section 190:2543). The four layers were
-   exported cropped at the 1440px frame's right edge, so the box is
-   anchored to the page edge. Box = 880x1214, spanning Figma x 563-1443
-   and y 18-1232; layer positions are percentages of it. */
+/* The Solution artwork (Figma section 190:2543): one pre-composed
+   881x1214 image, cropped at the 1440px frame's right edge in Figma, so
+   it is anchored to the page edge. */
 .solution { position: relative; overflow: hidden; background: var(--white); }
-.solution-art { position: relative; width: 100%; max-width: 560px; margin: 24px auto 0; aspect-ratio: 880 / 1214; }
-.solution-art img, .solution-art__shadow { position: absolute; display: block; }
-.solution-art__orange    { left: 20.568%; top: 0;       width: 79.432%; height: 100%; }
-.solution-art__blue      { left: 0;       top: 9.418%;  width: 100%;    height: 73.558%; }
-.solution-art__undercoat { left: 26.136%; top: 12.932%; width: 63.523%; height: 53.295%; }
-.solution-art__antirust  { left: 49.205%; top: 27.1%;   width: 50.795%; height: 51.4%; }
-.solution-art__shadow    { left: 49.2%;   top: 64.7%;   width: 32.16%;  height: 4.7%;
-  border-radius: 50%; background: rgba(0,0,0,0.45); filter: blur(10px); transform: rotate(-2.65deg); }
+.solution-art { position: relative; width: 100%; max-width: 560px; margin: 24px auto 0; }
+.solution-art img { display: block; width: 100%; height: auto; }
 @media (max-width: 1023px) {
   /* The artwork's top ~20% and bottom ~8% are transparent; trim them
      when it stacks under the text */
