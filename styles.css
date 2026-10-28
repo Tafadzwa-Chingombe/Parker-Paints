@@ -278,7 +278,7 @@ img.showcase-card__img { height: auto; }
   display: flex; flex-direction: column; justify-content: flex-end; min-height: 260px;
 }
 .showcase-card--cta p { font-family: var(--font-display); font-size: 28px; line-height: 1.2; margin-bottom: 20px; }
-.showcase-card--cta a {
+.showcase-card--cta a, .showcase-card--cta span {
   width: 48px; height: 48px; border-radius: 50%; background: var(--white); color: var(--navy);
   display: flex; align-items: center; justify-content: center; font-size: 20px; font-weight: 700;
 }
@@ -792,4 +792,103 @@ img.wall-tile__img { height: auto; }
   .solution-art { position: absolute; right: 0; top: 18px; margin: 0; width: min(880px, 61vw); max-width: none; pointer-events: none; }
   .solution { min-height: calc(min(880px, 61vw) * 1.29 + 18px); }
   .solution .container { position: relative; z-index: 1; }
+}
+
+/* Product photos are cut-out tins on transparent backgrounds: fit, don't crop */
+img.wall-tile__img, img.pd-hero__img, img.showcase-card__img { object-fit: contain; }
+a.showcase-card:not(.showcase-card--cta) { display: block; color: inherit; }
+
+/* ==========================================================================
+   Interactions — buttons, icons, cards and links on every page.
+   Hover effects only on devices that can hover; touch devices get press
+   feedback instead. Motion is switched off for reduced-motion users.
+   ========================================================================== */
+:root { --ease-out: cubic-bezier(.2, .8, .2, 1); --lift-shadow: 0 14px 28px -12px rgba(25, 56, 98, 0.45); }
+
+.btn, .chip, .family-picker__item, .pill-toggle button, .calc-option, .calc-stepper button,
+.room-card--add, .room-card--add span, .room-card__remove, .newsletter-form button,
+.footer-social a, .footer-social svg, .nav-toggle, .nav-drawer__close, .brand__logo,
+.site-nav a, .footer-col a, .pd-hero__back, .calc-faq__link, .faq-item__q,
+.wall-tile, .showcase-card, .swatch-card, .combo-card, .testimonial-card,
+.wall-tile__img, .showcase-card__img, .showcase-card--cta span,
+.feature-row__icon, .promise-item__icon, .contact-info-icon, .trust-badges svg {
+  transition: transform .25s var(--ease-out), box-shadow .25s var(--ease-out),
+              background-color .2s ease, color .2s ease, border-color .2s ease, opacity .2s ease;
+}
+
+/* Keyboard focus: a clear ring on everything clickable */
+a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible {
+  outline: 3px solid var(--orange); outline-offset: 3px; border-radius: 6px;
+}
+
+/* Nav links: sliding underline */
+.site-nav a { position: relative; }
+.site-nav a::after {
+  content: ""; position: absolute; left: 0; right: 0; bottom: -6px; height: 2px; border-radius: 2px;
+  background: currentColor; transform: scaleX(0); transform-origin: left; transition: transform .25s var(--ease-out);
+}
+.site-nav a.is-active::after { transform: scaleX(1); }
+
+/* Press feedback — works on touch and mouse */
+.btn:active, .chip:active, .family-picker__item:active, .calc-option:active,
+.calc-stepper button:active, .newsletter-form button:active, .footer-social a:active,
+.pill-toggle button:active { transform: scale(0.96); }
+.wall-tile:active, .showcase-card:active, .room-card--add:active { transform: scale(0.98); }
+
+@media (hover: hover) and (pointer: fine) {
+  /* Buttons: lift + shadow, variant colours */
+  .btn:hover { transform: translateY(-2px); box-shadow: var(--lift-shadow); }
+  .btn:active { transform: translateY(0) scale(0.98); box-shadow: none; }
+  .btn--navy:hover { background: var(--blue); }
+  .btn--blue:hover { background: #1746bd; }
+  .btn--outline-white:hover { background: var(--white); color: var(--navy); }
+  .btn--outline-blue:hover { background: var(--bg-tint); }
+  .btn--black-pill:hover { background: #000; box-shadow: 0 14px 28px -10px rgba(0,0,0,0.6); }
+  .btn--gold:hover { background: #d8b232; }
+  .newsletter-form button:hover { filter: brightness(1.12); }
+
+  /* Links */
+  .site-nav a:hover::after { transform: scaleX(1); }
+  .footer-col a:hover { transform: translateX(3px); }
+  .pd-hero__back:hover { color: var(--white); transform: translateX(-4px); }
+  .calc-faq__link:hover, .room-card__remove:hover { text-decoration: underline; text-underline-offset: 3px; }
+  .faq-item__q:hover { color: var(--blue); }
+  .brand:hover .brand__logo { transform: scale(1.04); }
+  .nav-toggle:hover { opacity: .8; }
+  .nav-drawer__close:hover { transform: rotate(90deg); }
+
+  /* Chips, toggles, steppers */
+  .chip:not(.is-active):hover { border-color: var(--blue); color: var(--blue); transform: translateY(-1px); }
+  .family-picker__item:not(.is-active):hover { background: rgba(255,255,255,0.16); border-color: rgba(255,255,255,0.45); }
+  .pill-toggle button:not(.is-active):hover { background: var(--white); color: var(--navy); }
+  .calc-option:not(.is-active):hover { border-color: var(--orange); transform: translateY(-2px); }
+  .calc-stepper button:hover { background: var(--navy); border-color: var(--navy); color: var(--white); }
+  .room-card--add:hover { border-color: var(--orange); }
+  .room-card--add:hover span { transform: rotate(90deg) scale(1.08); }
+
+  /* Cards: lift, product image zoom */
+  .wall-tile:hover, .showcase-card:hover, .swatch-card:hover, .combo-card:hover { transform: translateY(-6px); box-shadow: 0 20px 36px -18px rgba(25,56,98,0.45); }
+  .testimonial-card:hover { transform: translateY(-4px); }
+  .wall-tile:hover .wall-tile__img, .showcase-card:hover .showcase-card__img { transform: scale(1.05); }
+  .showcase-card--cta:hover span { transform: translateX(6px); background: var(--orange); color: var(--white); }
+
+  /* Icons */
+  .footer-social a:hover { background: var(--blue); transform: translateY(-3px); }
+  .footer-social a:hover svg { transform: scale(1.1); }
+  .feature-row:hover .feature-row__icon { background: var(--blue); color: var(--white); transform: scale(1.08) rotate(-6deg); }
+  .feature-row--callout:hover .feature-row__icon { background: var(--orange); }
+  .promise-item:hover .promise-item__icon { background: var(--gold); color: var(--navy); transform: translateY(-4px); }
+  .contact-info-row:hover .contact-info-icon { background: var(--blue); color: var(--white); transform: scale(1.08); }
+  .trust-badges span:hover svg { transform: scale(1.18); color: var(--orange); }
+}
+
+/* Bigger tap targets on touch screens */
+@media (pointer: coarse) {
+  .calc-stepper button { width: 40px; height: 40px; }
+  .footer-social a { width: 44px; height: 44px; }
+  .chip, .family-picker__item { min-height: 40px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { transition-duration: .01ms !important; animation-duration: .01ms !important; animation-iteration-count: 1 !important; }
 }
