@@ -15,7 +15,7 @@ larger), scene photos landscape (1600 px wide).
 | `images/challenge-collage.webp` | Home page, The Challenge collage | ✅ Done |
 | `images/solution-artwork.webp` | Home page, The Solution artwork | ✅ Done |
 | `images/about-hero-artwork.webp` | About page hero artwork | ✅ Done |
-| `images/team-1.jpg` | About page, team card 1 | Portrait (square), matching the name in the caption |
+| `images/team-1.webp` | About page, team card 1 | ✅ Done: Mohammed Lunat |
 | `images/team-2.jpg` | About page, team card 2 | Portrait (square) |
 | `images/team-3.jpg` | About page, team card 3 | Portrait (square) |
 | `images/team-4.jpg` | About page, team card 4 | Portrait (square) |
