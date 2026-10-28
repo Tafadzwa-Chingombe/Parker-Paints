@@ -770,3 +770,16 @@ img.wall-tile__img { height: auto; }
   .page-home .feature-row h4 { font-size: 17px; }
   .page-home .feature-row p { font-size: 15px; line-height: 1.6; color: var(--text-body); }
 }
+
+/* The Challenge photo collage (Figma group 190:2525, 677x776).
+   Pieces are pre-cut with slanted edges; positions are percentages of
+   the group so it scales with the column. */
+.challenge-collage { position: relative; width: 100%; max-width: 677px; aspect-ratio: 677 / 776; }
+.challenge-collage img { position: absolute; display: block; }
+.challenge-collage__tall     { left: 0;       top: 0;       width: 55.096%; height: 100%; }
+.challenge-collage__brick    { left: 49.778%; top: 0;       width: 50.222%; height: 35.438%; }
+.challenge-collage__plaster  { left: 43.944%; top: 35.696%; width: 50.074%; height: 34.665%; }
+.challenge-collage__building { left: 39.143%; top: 70.747%; width: 49.040%; height: 29.253%; }
+@media (min-width: 1280px) {
+  .page-home .feature-split:not(.feature-split--reverse) { grid-template-columns: 677px 1fr; gap: 56px; }
+}

@@ -13,7 +13,7 @@ larger), scene photos landscape (1600 px wide).
 |---|---|---|
 | `images/hero.jpg` | Home page, full-width banner behind the headline | A freshly painted room or building exterior. Keep the left side calm, because text sits over it |
 | `images/before-after.jpg` | Home page, "See the transformation" | One image: left half before, right half after |
-| `images/challenge.jpg` | Home page, problem section | Faded, peeling or mouldy wall |
+| `images/challenge-*.webp` (4 files) | Home page, The Challenge collage | ✅ Done: cracked wall, exposed brick, cracked plaster, patched building |
 | `images/solution.jpg` | Home page, solution section | The same kind of wall, freshly finished |
 | `images/about-hero.jpg` | About page, top | Factory, warehouse, or the team on site |
 | `images/team-1.jpg` | About page, team card 1 | Portrait (square), matching the name in the caption |
