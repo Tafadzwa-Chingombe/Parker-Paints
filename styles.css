@@ -259,6 +259,7 @@ img.photo { width: 100%; height: 100%; object-fit: cover; display: block; }
   box-shadow: 0 8px 24px rgba(0,0,0,0.08);
 }
 .showcase-card__img { aspect-ratio: 4/3.25; background: var(--bg-tint); }
+img.showcase-card__img { height: auto; }
 .showcase-card__body { padding: 24px; }
 .showcase-card__body h4 { font-family: var(--font-ui); font-weight: 700; font-size: 16px; color: var(--navy); margin-bottom: 8px; }
 .showcase-card__body p { font-family: var(--font-ui); font-size: 13px; color: var(--text-body); opacity: 0.7; }
@@ -648,3 +649,86 @@ img.wall-tile__img { height: auto; }
 .calc-faq__grid h5 { font-family: var(--font-ui); font-weight: 700; font-size: 15px; color: var(--white); margin-bottom: 8px; }
 .calc-faq__grid p { font-family: var(--font-ui); font-size: 13px; color: var(--text-muted-2); line-height: 1.6; }
 .calc-faq__link { color: var(--blue); font-family: var(--font-ui); font-weight: 600; font-size: 14px; }
+
+/* =========================================================
+   Home page — widths and type from the Figma desktop design
+   (1440px frame). Scoped to .page-home so other pages keep
+   their current layout.
+   ========================================================= */
+@media (min-width: 1280px) {
+  .page-home .container { padding: 0 120px; }
+  .page-home .container--wide { padding: 0 80px; }
+}
+
+/* Eyebrow with the short blue rule underneath */
+.eyebrow--rule { position: relative; font-family: var(--font-heading); font-size: 18px; letter-spacing: 0; padding-bottom: 14px; margin-bottom: 24px; }
+.eyebrow--rule::after { content: ""; position: absolute; left: 0; bottom: 0; width: 79px; height: 4px; background: var(--blue); }
+@media (min-width: 1024px) { .eyebrow--rule { font-size: 25px; padding-bottom: 18px; } }
+
+/* Hero */
+.hero__title span.hero__title-lead { display: block; font-weight: 800; color: var(--white); text-shadow: none; }
+.page-home .hero__content { width: 100%; }
+@media (min-width: 1024px) {
+  .page-home .hero { min-height: 833px; }
+  .page-home .hero__content { justify-content: flex-start; padding-top: 151px; padding-bottom: 25px; }
+  .page-home .hero__title { font-size: 50px; line-height: 48px; max-width: 620px; margin-bottom: 26px; }
+  .page-home .hero__title-lead { margin-bottom: 24px; }
+  .page-home .hero__sub { font-family: var(--font-alt); font-size: 35px; line-height: 1.36; max-width: 601px; margin-bottom: 30px; }
+  .page-home .hero__actions { gap: 24px; margin-bottom: 59px; }
+  .page-home .hero__actions .btn { width: 282px; height: 77px; padding: 0; justify-content: center; border-radius: var(--r-xl); font-family: var(--font-body); font-weight: 400; font-size: 30px; }
+  .page-home .trust-badges { flex-wrap: nowrap; gap: 9px; width: 615px; max-width: none; min-height: 77px; padding: 0 13px; border-width: 5px; align-items: center; }
+  .page-home .trust-badges span { width: 194px; gap: 9px; font-size: 25px; line-height: 1.2; }
+  .page-home .trust-badges svg { width: 45px; height: 45px; flex-shrink: 0; }
+}
+
+/* The Challenge / The Solution */
+.feature-row--callout { background: #f5efe4; border-left: 4px solid var(--orange); padding: 14px 16px; }
+.feature-row--callout .feature-row__icon { background: transparent; color: var(--orange); }
+.feature-row--callout h4 { margin: 0; }
+@media (min-width: 1024px) {
+  .page-home .feature-split { grid-template-columns: 1fr 480px; gap: 38px; align-items: start; }
+  .page-home .feature-split--reverse { grid-template-columns: 550px 1fr; gap: 64px; }
+  .page-home .feature-split__title { line-height: 1.5; margin-bottom: 16px; max-width: 550px; }
+  .page-home .feature-split__intro { font-size: 24px; line-height: 1.284; max-width: 480px; margin-bottom: 43px; }
+  .page-home .feature-rows { gap: 30px; }
+  .page-home .feature-row { gap: 37px; padding-left: 15px; }
+  .page-home .feature-row p { font-size: 24px; line-height: 1.284; max-width: 387px; }
+  .page-home .feature-row--callout { max-width: 486px; padding: 14px 16px 14px 11px; margin-top: 20px; }
+}
+
+/* Browse the range */
+.page-home #products .eyebrow { font-size: 12px; }
+.page-home #products .section-header h2 { font-family: var(--font-display); font-weight: 400; font-size: 40px; }
+.page-home img.showcase-card__img { height: 260px; aspect-ratio: auto; object-fit: contain; }
+
+/* Before / After */
+@media (min-width: 1024px) {
+  .page-home .before-after__slider { aspect-ratio: 1440 / 853; max-height: none; }
+  .page-home .before-after__pill { font-size: 24px; padding: 12px 22px; }
+  .page-home .before-after__caption { left: 118px; bottom: 47px; max-width: 550px; }
+  .page-home .before-after__caption h2 { color: var(--navy); }
+}
+
+/* Real Colour Combinations */
+.combos__title { font-family: var(--font-display); font-weight: 400; font-size: 32px; color: var(--orange); margin-bottom: 8px; }
+.combos__sub { font-family: var(--font-ui); font-size: 15px; color: var(--navy); margin-bottom: 32px; }
+.page-home .combos .combo-grid { gap: 26px; }
+
+/* Catalogue CTA */
+@media (min-width: 900px) { .page-home .catalogue-cta__inner { grid-template-columns: 1fr 440px; } }
+.page-home .catalogue-cta h2 { margin-bottom: 12px; }
+.page-home .catalogue-cta p { margin-bottom: 39px; }
+.page-home .catalogue-cta__checklist { gap: 26px; }
+
+/* Testimonials */
+.testimonials__header { text-align: center; margin-bottom: 48px; }
+.testimonials__header .eyebrow { font-weight: 800; font-size: 14px; letter-spacing: 0.84px; margin-bottom: 16px; }
+.testimonials__header h2 { font-family: var(--font-ui); font-weight: 700; font-size: 36px; line-height: 1.25; color: var(--white); }
+@media (min-width: 768px) { .testimonials__header h2 { font-size: 48px; } }
+@media (min-width: 900px) {
+  .page-home .testimonial-grid { gap: 30px; max-width: 1266px; margin: 0 auto; }
+  .page-home .testimonial-card { border-radius: 45px; gap: 32px; }
+  .page-home .testimonial-card__quote { font-size: 18px; line-height: 24px; }
+  .page-home .testimonial-card__name { font-size: 18px; }
+  .page-home .testimonial-card__role { font-size: 18px; }
+}

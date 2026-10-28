@@ -10,7 +10,7 @@
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Crect width='24' height='24' rx='5' fill='%23193862'/%3E%3Cpath d='M6 6h9l5 5v7H6z' stroke='white' stroke-width='2' fill='none'/%3E%3C/svg%3E" />
 <link rel="stylesheet" href="styles.css" />
 </head>
-<body>
+<body class="page-home">
 
 <div class="hero">
   <img src="images/hero.jpg" alt="" class="photo hero__bg">
@@ -59,7 +59,7 @@
       </ul>
 </div>
   <div class="container hero__content">
-    <h1 class="hero__title">Every wall tells a story.<br>Let's make yours <span>unforgettable.</span></h1>
+    <h1 class="hero__title"><span class="hero__title-lead">Every wall tells a story.</span> Let's make yours <span>unforgettable.</span></h1>
     <p class="hero__sub">Durable, high-quality paints designed for Zimbabwean homes, businesses, and industrial spaces.</p>
     <div class="hero__actions">
       <a href="colour-catalogue.html" class="btn btn--navy">Explore Colours</a>
@@ -73,18 +73,6 @@
   </div>
 </div>
 
-<section class="before-after">
-  <div class="before-after__slider">
-    <img src="images/before-after.jpg" alt="A wall before and after repainting with Parker Paints" class="photo" loading="lazy" decoding="async">
-    <span class="before-after__pill before-after__pill--before">BEFORE</span>
-    <span class="before-after__pill before-after__pill--after">AFTER</span>
-    <span class="before-after__handle">&#8596;</span>
-  </div>
-  <div class="before-after__caption">
-    <h2>See the transformation</h2>
-    <p>From faded and worn&hellip; to bold and protected.</p>
-  </div>
-</section>
 
 <section class="section">
   <div class="container feature-split">
@@ -92,7 +80,7 @@
       <img src="images/challenge.jpg" alt="Faded, peeling paint on a weathered wall" class="photo" loading="lazy" decoding="async">
     </div>
     <div>
-      <span class="eyebrow">The Challenge</span>
+      <span class="eyebrow eyebrow--rule">The Challenge</span>
       <h2 class="feature-split__title">Zimbabwe&rsquo;s climate is tough on surfaces.</h2>
       <p class="feature-split__intro">Harsh sunlight, heavy rains, and everyday wear can quickly fade colours, crack finishes, and damage poorly protected walls.</p>
       <div class="feature-rows">
@@ -116,7 +104,7 @@
 <section class="section" style="background:var(--bg-cream-2);">
   <div class="container feature-split feature-split--reverse">
     <div>
-      <span class="eyebrow">The Solution</span>
+      <span class="eyebrow eyebrow--rule">The Solution</span>
       <h2 class="feature-split__title">Paints engineered for durability and beauty</h2>
       <p class="feature-split__intro">Parker Paints combines innovation and quality materials to deliver finishes that last longer and look better.</p>
       <div class="feature-rows">
@@ -136,7 +124,7 @@
           <span class="feature-row__icon"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 3a2.85 2.83 0 1 1 4 4L7.5 20.5 2 22l1.5-5.5Z"/></svg></span>
           <div><h4>Easy Application</h4><p>Designed for a smooth, buttery glide, our paint features exceptional self-leveling properties that minimize brush marks and roller tracks.</p></div>
         </div>
-        <div class="feature-row">
+        <div class="feature-row feature-row--callout">
           <span class="feature-row__icon"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6.5 6.5 3 21l14.5-3.5L21 3z"/><path d="m9 15 6-6"/></svg></span>
           <div><h4>Built to withstand Zimbabwe&rsquo;s toughest conditions.</h4></div>
         </div>
@@ -175,10 +163,23 @@
   </div>
 </section>
 
-<section class="section section--tight">
-  <div class="container">
-    <h2 class="text-center" style="font-family:var(--font-display);color:var(--orange);font-size:32px;margin-bottom:8px;">Real Colour Combinations</h2>
-    <p class="text-center" style="color:var(--navy);font-family:var(--font-ui);margin-bottom:32px;">Real product pairings for common project types</p>
+<section class="before-after">
+  <div class="before-after__slider">
+    <img src="images/before-after.jpg" alt="A wall before and after repainting with Parker Paints" class="photo" loading="lazy" decoding="async">
+    <span class="before-after__pill before-after__pill--before">BEFORE</span>
+    <span class="before-after__pill before-after__pill--after">AFTER</span>
+    <span class="before-after__handle">&#8596;</span>
+  </div>
+  <div class="before-after__caption">
+    <h2>See the transformation</h2>
+    <p>From faded and worn&hellip; to bold and protected.</p>
+  </div>
+</section>
+
+<section class="section section--tight combos">
+  <div class="container container--wide">
+    <h2 class="combos__title">Real Colour Combinations</h2>
+    <p class="combos__sub">Real product pairings for common project types</p>
     <div class="combo-grid">
       <div class="combo-card">
         <div class="combo-card__swatches">
@@ -213,7 +214,7 @@
 </section>
 
 <section class="catalogue-cta">
-  <div class="container catalogue-cta__inner">
+  <div class="container container--wide catalogue-cta__inner">
     <div>
       <h2>Can&rsquo;t decide? Check our catalogue</h2>
       <p>Hold real colours against your walls before you commit.</p>
@@ -228,11 +229,11 @@
   </div>
 </section>
 
-<section class="section" style="background:var(--bg-grey);">
-  <div class="container">
-    <div class="text-center" style="margin-bottom:32px;">
-      <span class="eyebrow" style="justify-content:center;">Testimonial</span>
-      <h2 style="font-size:40px;">Client Success Stories</h2>
+<section class="section testimonials" style="background:var(--bg-grey);">
+  <div class="container container--wide">
+    <div class="testimonials__header">
+      <span class="eyebrow">Testimonial</span>
+      <h2>Client Success Stories</h2>
     </div>
     <div class="testimonial-grid">
             <div class="testimonial-card">
