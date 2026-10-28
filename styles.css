@@ -732,3 +732,23 @@ img.wall-tile__img { height: auto; }
   .page-home .testimonial-card__name { font-size: 18px; }
   .page-home .testimonial-card__role { font-size: 18px; }
 }
+
+/* Hero product buckets (Figma: Plaster Primer 280:861, Pinkwood 280:865)
+   with a soft contact shadow under each. Only shown where there is room
+   beside the hero text. */
+.hero__buckets { display: none; }
+@media (min-width: 1280px) {
+  .page-home .hero__buckets { display: block; position: absolute; inset: 0; z-index: 1; pointer-events: none; }
+  .hero__bucket { position: absolute; }
+  .hero__bucket img { position: relative; z-index: 1; display: block; }
+  .hero__bucket::before {
+    content: ""; position: absolute; z-index: 0;
+    border-radius: 50%;
+    background: rgba(0,0,0,0.55);
+    filter: blur(9px);
+  }
+  .hero__bucket--plaster { left: calc(58.33% + 40px); top: 428px; width: 281px; height: 334px; }
+  .hero__bucket--plaster::before { left: 20px; top: 290px; width: 270px; height: 56px; transform: rotate(-2.65deg); }
+  .hero__bucket--pinkwood { left: calc(83.33% - 30px); top: 519px; width: 217px; height: 260px; }
+  .hero__bucket--pinkwood::before { left: 26px; top: 230px; width: 200px; height: 44px; transform: rotate(-3.98deg); }
+}
