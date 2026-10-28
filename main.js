@@ -13,6 +13,18 @@
     });
   }
 
+  /* Missing images: fall back to the .photo gradient instead of a broken icon */
+  var BLANK = "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7";
+  function onImgError(img) {
+    if (img.src === BLANK) return;
+    img.classList.add("is-missing");
+    img.src = BLANK;
+  }
+  document.querySelectorAll("img.photo").forEach(function (img) {
+    if (img.complete && img.naturalWidth === 0) onImgError(img);
+    else img.addEventListener("error", function () { onImgError(img); });
+  });
+
   /* FAQ accordion */
   document.querySelectorAll(".faq-item__q").forEach(function (btn) {
     btn.addEventListener("click", function () {
