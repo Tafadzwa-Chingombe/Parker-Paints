@@ -661,24 +661,23 @@ img.wall-tile__img { height: auto; }
 }
 
 /* Eyebrow with the short blue rule underneath */
-.eyebrow--rule { position: relative; font-family: var(--font-heading); font-size: 18px; letter-spacing: 0; padding-bottom: 14px; margin-bottom: 24px; }
-.eyebrow--rule::after { content: ""; position: absolute; left: 0; bottom: 0; width: 79px; height: 4px; background: var(--blue); }
-@media (min-width: 1024px) { .eyebrow--rule { font-size: 25px; padding-bottom: 18px; } }
+.eyebrow--rule { position: relative; font-family: var(--font-heading); font-size: 14px; letter-spacing: 1.5px; padding-bottom: 12px; margin-bottom: 20px; }
+.eyebrow--rule::after { content: ""; position: absolute; left: 0; bottom: 0; width: 48px; height: 3px; border-radius: 2px; background: var(--blue); }
 
 /* Hero */
 .hero__title span.hero__title-lead { display: block; font-weight: 800; color: var(--white); text-shadow: none; }
 .page-home .hero__content { width: 100%; }
 @media (min-width: 1024px) {
   .page-home .hero { min-height: 833px; }
-  .page-home .hero__content { justify-content: flex-start; padding-top: 151px; padding-bottom: 25px; }
-  .page-home .hero__title { font-size: 50px; line-height: 48px; max-width: 620px; margin-bottom: 26px; }
-  .page-home .hero__title-lead { margin-bottom: 24px; }
-  .page-home .hero__sub { font-family: var(--font-alt); font-size: 35px; line-height: 1.36; max-width: 601px; margin-bottom: 30px; }
-  .page-home .hero__actions { gap: 24px; margin-bottom: 59px; }
-  .page-home .hero__actions .btn { width: 282px; height: 77px; padding: 0; justify-content: center; border-radius: var(--r-xl); font-family: var(--font-body); font-weight: 400; font-size: 30px; }
-  .page-home .trust-badges { flex-wrap: nowrap; gap: 9px; width: 615px; max-width: none; min-height: 77px; padding: 0 13px; border-width: 5px; align-items: center; }
-  .page-home .trust-badges span { width: 194px; gap: 9px; font-size: 25px; line-height: 1.2; }
-  .page-home .trust-badges svg { width: 45px; height: 45px; flex-shrink: 0; }
+  .page-home .hero__content { justify-content: center; padding-top: 76px; padding-bottom: 40px; }
+  .page-home .hero__title { font-size: 48px; line-height: 1.12; letter-spacing: -0.5px; max-width: 620px; margin-bottom: 22px; }
+  .page-home .hero__title-lead { margin-bottom: 4px; }
+  .page-home .hero__sub { font-family: var(--font-alt); font-size: 19px; line-height: 1.6; color: rgba(255,255,255,0.88); max-width: 480px; margin-bottom: 36px; }
+  .page-home .hero__actions { gap: 16px; margin-bottom: 48px; }
+  .page-home .hero__actions .btn { height: 54px; padding: 0 30px; justify-content: center; border-radius: 12px; font-family: var(--font-body); font-weight: 500; font-size: 16px; }
+  .page-home .trust-badges { flex-wrap: nowrap; gap: 28px; width: auto; max-width: none; padding: 14px 24px; border-width: 2px; border-color: rgba(255,255,255,0.25); border-radius: 14px; background: rgba(7,17,31,0.35); backdrop-filter: blur(6px); align-items: center; display: inline-flex; align-self: flex-start; }
+  .page-home .trust-badges span { gap: 10px; font-size: 14px; line-height: 1.2; white-space: nowrap; }
+  .page-home .trust-badges svg { width: 22px; height: 22px; flex-shrink: 0; }
 }
 
 /* The Challenge / The Solution */
@@ -686,14 +685,17 @@ img.wall-tile__img { height: auto; }
 .feature-row--callout .feature-row__icon { background: transparent; color: var(--orange); }
 .feature-row--callout h4 { margin: 0; }
 @media (min-width: 1024px) {
-  .page-home .feature-split { grid-template-columns: 1fr 480px; gap: 38px; align-items: start; }
-  .page-home .feature-split--reverse { grid-template-columns: 550px 1fr; gap: 64px; }
-  .page-home .feature-split__title { line-height: 1.5; margin-bottom: 16px; max-width: 550px; }
-  .page-home .feature-split__intro { font-size: 24px; line-height: 1.284; max-width: 480px; margin-bottom: 43px; }
-  .page-home .feature-rows { gap: 30px; }
-  .page-home .feature-row { gap: 37px; padding-left: 15px; }
-  .page-home .feature-row p { font-size: 24px; line-height: 1.284; max-width: 387px; }
-  .page-home .feature-row--callout { max-width: 486px; padding: 14px 16px 14px 11px; margin-top: 20px; }
+  .page-home .feature-split { grid-template-columns: 1fr 460px; gap: 72px; align-items: center; }
+  .page-home .feature-split--reverse { grid-template-columns: 480px 1fr; gap: 80px; }
+  .page-home .feature-split__title { font-size: 36px; line-height: 1.22; letter-spacing: -0.3px; margin-bottom: 16px; max-width: 480px; }
+  .page-home .feature-split__intro { font-size: 17px; line-height: 1.65; color: var(--text-body); max-width: 460px; margin-bottom: 36px; }
+  .page-home .feature-rows { gap: 24px; }
+  .page-home .feature-row { gap: 18px; padding-left: 0; }
+  .page-home .feature-row__icon { width: 44px; height: 44px; }
+  .page-home .feature-row h4 { font-size: 16px; margin-bottom: 4px; }
+  .page-home .feature-row p { font-size: 15px; line-height: 1.6; color: var(--text-body); max-width: 400px; }
+  .page-home .feature-row--callout { max-width: 460px; padding: 14px 18px; margin-top: 8px; border-radius: 0 10px 10px 0; align-items: center; }
+  .page-home .feature-row--callout h4 { font-size: 15px; line-height: 1.4; }
 }
 
 /* Browse the range */
@@ -751,4 +753,20 @@ img.wall-tile__img { height: auto; }
   .hero__bucket--plaster::before { left: 20px; top: 290px; width: 270px; height: 56px; transform: rotate(-2.65deg); }
   .hero__bucket--pinkwood { left: calc(83.33% - 30px); top: 519px; width: 217px; height: 260px; }
   .hero__bucket--pinkwood::before { left: 26px; top: 230px; width: 200px; height: 44px; transform: rotate(-3.98deg); }
+}
+
+/* Home hero on phones and tablets: lighter type, compact buttons and badges */
+@media (max-width: 1023px) {
+  .page-home .hero__title { font-size: 32px; line-height: 1.15; }
+  .page-home .hero__sub { font-family: var(--font-alt); font-size: 16px; line-height: 1.6; color: rgba(255,255,255,0.88); margin-bottom: 28px; }
+  .page-home .hero__actions { gap: 12px; margin-bottom: 28px; }
+  .page-home .hero__actions .btn { padding: 13px 22px; font-size: 15px; border-radius: 12px; }
+  .page-home .hero__actions .btn--outline-white { border-width: 2px; }
+  .page-home .trust-badges { gap: 10px 18px; padding: 12px 16px; border-width: 1px; border-color: rgba(255,255,255,0.25); border-radius: 14px; background: rgba(7,17,31,0.35); }
+  .page-home .trust-badges span { gap: 8px; font-size: 13px; }
+  .page-home .trust-badges svg { width: 18px; height: 18px; }
+  .page-home .feature-split__title { font-size: 28px; line-height: 1.25; }
+  .page-home .feature-split__intro { font-size: 16px; line-height: 1.65; color: var(--text-body); }
+  .page-home .feature-row h4 { font-size: 17px; }
+  .page-home .feature-row p { font-size: 15px; line-height: 1.6; color: var(--text-body); }
 }
