@@ -28,8 +28,8 @@ Calculator.
 
 | # | Product | File |
 |---|---|---|
-| 1 | Water Based Plaster Primer | `images/products/water-based-plaster-primer.jpg` |
-| 2 | Pinkwood Primer | `images/products/pinkwood-primer.jpg` |
+| 1 | Water Based Plaster Primer | `images/products/water-based-plaster-primer.webp` ✅ |
+| 2 | Pinkwood Primer | `images/products/pinkwood-primer.webp` ✅ |
 | 3 | Universal Undercoat | `images/products/universal-undercoat.jpg` |
 | 4 | Anti-Rust Metal (Red Oxide) Primer | `images/products/anti-rust-metal-red-oxide-primer.jpg` |
 | 5 | Galvanized Iron Primer | `images/products/galvanized-iron-primer.jpg` |
