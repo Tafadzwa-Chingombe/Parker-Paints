@@ -12,7 +12,6 @@ larger), scene photos landscape (1600 px wide).
 | File | Where it appears | Suggested shot |
 |---|---|---|
 | `images/hero.jpg` | Home page, full-width banner behind the headline | A freshly painted room or building exterior. Keep the left side calm, because text sits over it |
-| `images/before-after.jpg` | Home page, "See the transformation" | One image: left half before, right half after |
 | `images/challenge-*.webp` (4 files) | Home page, The Challenge collage | ✅ Done: cracked wall, exposed brick, cracked plaster, patched building |
 | `images/solution.jpg` | Home page, solution section | The same kind of wall, freshly finished |
 | `images/about-hero.jpg` | About page, top | Factory, warehouse, or the team on site |

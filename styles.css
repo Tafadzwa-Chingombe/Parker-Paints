@@ -316,18 +316,6 @@ img.pd-hero__img { width: 220px; height: 220px; }
 .trust-badges { display: flex; flex-wrap: wrap; gap: 20px 32px; border: 3px solid var(--navy-dark); border-radius: var(--r-xl); padding: 20px 24px; max-width: 640px; }
 .trust-badges span { display: flex; align-items: center; gap: 10px; color: var(--white); font-family: var(--font-alt); font-size: 16px; }
 
-.before-after { position: relative; }
-.before-after__slider { position: relative; aspect-ratio: 16/9; max-height: 700px; overflow: hidden; }
-.before-after__pill { position: absolute; top: 16px; font-family: var(--font-body); font-weight: 700; font-size: 16px; color: var(--white); border-radius: var(--r-xl); padding: 12px 20px; }
-.before-after__pill--before { left: 16px; background: var(--navy); }
-.before-after__pill--after { right: 16px; background: var(--navy-dark); }
-.before-after__handle { position: absolute; left: 50%; top: 50%; transform: translate(-50%,-50%); width: 56px; height: 56px; border-radius: 50%; background: var(--white); display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: 22px; color: var(--navy); box-shadow: 0 6px 16px rgba(0,0,0,0.35); }
-.before-after__caption { position: absolute; left: 24px; bottom: 24px; max-width: 520px; color: var(--white); }
-@media (min-width: 768px) { .before-after__caption { left: 80px; bottom: 56px; } }
-.before-after__caption h2 { font-family: var(--font-heading); font-weight: 700; font-size: 28px; color: var(--white); margin-bottom: 8px; }
-@media (min-width: 768px) { .before-after__caption h2 { font-size: 44px; } }
-.before-after__caption p { font-family: var(--font-body); font-size: 16px; }
-@media (min-width: 768px) { .before-after__caption p { font-size: 24px; } }
 
 .feature-split { display: grid; gap: 40px; align-items: center; }
 @media (min-width: 1024px) { .feature-split { grid-template-columns: 1fr 1fr; gap: 64px; } .feature-split--reverse .feature-split__media { order: 2; } }
@@ -703,13 +691,6 @@ img.wall-tile__img { height: auto; }
 .page-home #products .section-header h2 { font-family: var(--font-display); font-weight: 400; font-size: 40px; }
 .page-home img.showcase-card__img { height: 260px; aspect-ratio: auto; object-fit: contain; }
 
-/* Before / After */
-@media (min-width: 1024px) {
-  .page-home .before-after__slider { aspect-ratio: 1440 / 853; max-height: none; }
-  .page-home .before-after__pill { font-size: 24px; padding: 12px 22px; }
-  .page-home .before-after__caption { left: 118px; bottom: 47px; max-width: 550px; }
-  .page-home .before-after__caption h2 { color: var(--navy); }
-}
 
 /* Real Colour Combinations */
 .combos__title { font-family: var(--font-display); font-weight: 400; font-size: 32px; color: var(--orange); margin-bottom: 8px; }
