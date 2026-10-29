@@ -227,7 +227,7 @@ img.photo { width: 100%; height: 100%; object-fit: cover; display: block; }
 .footer-brand { display: flex; flex-direction: column; gap: 24px; max-width: 400px; }
 .footer-brand img.logo { height: 41px; width: auto; }
 .footer-brand p { font-family: var(--font-alt); font-weight: 600; font-size: 18px; color: var(--white); opacity: 0.9; line-height: 1.4; }
-.footer-brand__logo { display: block; height: 41px; width: auto; border-radius: 4px; }
+.footer-brand__logo { display: block; align-self: flex-start; height: 41px; width: auto; aspect-ratio: 80 / 35; object-fit: contain; border-radius: 4px; }
 .footer-social { display: flex; gap: 12px; }
 .footer-social a {
   width: 36px; height: 36px; border-radius: 50%;
