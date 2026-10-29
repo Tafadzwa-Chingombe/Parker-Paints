@@ -140,8 +140,19 @@ img.photo { width: 100%; height: 100%; object-fit: cover; display: block; }
 /* Reserve the header's space in whichever wrapper holds it */
 :has(> .site-header) { padding-top: 76px; }
 html { scroll-padding-top: 90px; }
-/* Home, at the top: the clear glass over the hero photo, as in the design */
-.page-home .site-header:not(.is-scrolled) { background: rgba(255,255,255,0.06); box-shadow: 0 10px 28px rgba(0,0,0,0.18); }
+/* At the top of every page: the clear glass from the Home design; it turns
+   to navy glass once the page scrolls */
+.site-header:not(.is-scrolled) { background: rgba(255,255,255,0.06); border-bottom-color: rgba(255,255,255,0.3); box-shadow: 0 10px 28px rgba(0,0,0,0.18); }
+/* About starts on white: navy text and a soft edge on the clear glass */
+.page-about .site-header:not(.is-scrolled) { border-bottom-color: rgba(25,56,98,0.12); box-shadow: 0 10px 28px rgba(25,56,98,0.08); }
+.page-about .site-header:not(.is-scrolled) .site-nav a:not(.is-active):not(:hover),
+.page-about .site-header:not(.is-scrolled) .nav-toggle { color: var(--navy); }
+.page-about .site-header:not(.is-scrolled) .site-nav a.is-active,
+.page-about .site-header:not(.is-scrolled) .site-nav a:hover { color: var(--blue); }
+/* Product pages: run the coloured banner up behind the header */
+body:has(> .pd-hero) { padding-top: 0; }
+body:has(> .pd-hero) .pd-hero { padding-top: 132px; }
+@media (min-width: 1024px) { body:has(> .pd-hero) .pd-hero { padding-top: 148px; } }
 .site-header.is-scrolled { background: rgba(25, 56, 98, 0.72); box-shadow: 0 10px 30px rgba(7,17,31,0.28); }
 @supports not ((backdrop-filter: blur(1px)) or (-webkit-backdrop-filter: blur(1px))) {
   .site-header, .site-header.is-scrolled { background: rgba(25, 56, 98, 0.96); }
@@ -448,8 +459,10 @@ img.pd-hero__img { width: 220px; height: 220px; }
 }
 
 /* Flagship band: full-width navy, left-aligned */
-.flagship-cta {
-  position: relative; overflow: hidden; isolation: isolate; padding: 56px 0;
+.flagship-cta { position: relative; overflow: hidden; isolation: isolate; padding: 56px 0; }
+/* Colourful navy "aurora" background, shared by the About flagship band and
+   the Products hero (no isolation on the hero: it holds the fixed header) */
+.flagship-cta, .wall-hero {
   background-color: #0f2342;
   background-image:
     /* paint-colour stripe along the top edge */
@@ -475,7 +488,7 @@ img.pd-hero__img { width: 220px; height: 220px; }
 .flagship-cta .about-container { position: relative; }
 @keyframes flagship-drift { to { transform: translate(-120px, 80px) scale(1.2); } }
 @media (max-width: 767px) {
-  .flagship-cta {
+  .flagship-cta, .wall-hero {
     background-image:
       linear-gradient(90deg, var(--orange), #f2547d, #9b4fd6, var(--blue), #12b3a6, var(--gold)),
       radial-gradient(70% 45% at 100% 0%, rgba(254,152,50,0.7) 0%, rgba(242,84,125,0.35) 50%, rgba(242,84,125,0) 80%),
@@ -619,7 +632,7 @@ img.team-card__img { height: auto; }
 /* ==========================================================================
    Products (The Wall) page
    ========================================================================== */
-.wall-hero { background: var(--navy); padding-bottom: 48px; }
+.wall-hero { padding-bottom: 48px; }
 .wall-hero h1 { font-family: var(--font-hero); font-weight: 800; font-size: 32px; color: var(--white); margin: 16px 0; }
 @media (min-width: 768px) { .wall-hero h1 { font-size: 46px; } }
 .wall-hero p { font-family: var(--font-ui); font-size: 16px; color: var(--text-light-2); max-width: 560px; margin: 0 auto 32px; }
@@ -639,9 +652,6 @@ img.wall-tile__img { height: auto; }
 .wall-tile p { font-family: var(--font-ui); font-size: 11px; color: var(--text-body); margin-bottom: 8px; line-height: 1.4; }
 .wall-tile__spec { font-family: var(--font-label); font-weight: 700; font-size: 10px; }
 
-.wall-cta { background: var(--navy); padding: 64px 24px; }
-.wall-cta h2 { font-family: var(--font-heading); font-weight: 700; font-size: 30px; color: var(--white); margin-bottom: 12px; }
-.wall-cta p { font-family: var(--font-ui); font-size: 14px; color: var(--text-light-2); margin-bottom: 24px; }
 
 /* Product tile hover / interactive states apply via JS-added classes only where needed. */
 
