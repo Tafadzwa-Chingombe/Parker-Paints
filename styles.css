@@ -461,8 +461,9 @@ img.pd-hero__img { width: 220px; height: 220px; }
 /* Flagship band: full-width navy, left-aligned */
 .flagship-cta { position: relative; overflow: hidden; isolation: isolate; padding: 56px 0; }
 /* Colourful navy "aurora" background, shared by the About flagship band and
-   the Products hero (no isolation on the hero: it holds the fixed header) */
-.flagship-cta, .wall-hero {
+   the Products, Colour Catalogue, Paint Calculator and FAQ heroes (no
+   isolation on the heroes: they hold the fixed header) */
+.flagship-cta, .wall-hero, .cat-hero, .calc-hero, .faq-hero {
   background-color: #0f2342;
   background-image:
     /* paint-colour stripe along the top edge */
@@ -488,7 +489,7 @@ img.pd-hero__img { width: 220px; height: 220px; }
 .flagship-cta .about-container { position: relative; }
 @keyframes flagship-drift { to { transform: translate(-120px, 80px) scale(1.2); } }
 @media (max-width: 767px) {
-  .flagship-cta, .wall-hero {
+  .flagship-cta, .wall-hero, .cat-hero, .calc-hero, .faq-hero {
     background-image:
       linear-gradient(90deg, var(--orange), #f2547d, #9b4fd6, var(--blue), #12b3a6, var(--gold)),
       radial-gradient(70% 45% at 100% 0%, rgba(254,152,50,0.7) 0%, rgba(242,84,125,0.35) 50%, rgba(242,84,125,0) 80%),
@@ -533,7 +534,7 @@ img.team-card__img { height: auto; }
 /* ==========================================================================
    FAQ page
    ========================================================================== */
-.faq-hero { background: var(--navy); padding-bottom: 56px; }
+.faq-hero { padding-bottom: 56px; }
 .faq-hero h1 { font-family: var(--font-display); font-size: 48px; color: var(--white); margin: 40px 0 16px; }
 .faq-hero p { font-family: var(--font-ui); font-size: 16px; color: rgba(255,255,255,0.75); max-width: 560px; margin: 0 auto 32px; }
 .faq-filters { display: flex; flex-wrap: wrap; justify-content: center; gap: 10px; }
@@ -588,7 +589,7 @@ img.team-card__img { height: auto; }
 /* ==========================================================================
    Colour Catalogue page
    ========================================================================== */
-.cat-hero { background: var(--navy); position: relative; overflow: hidden; }
+.cat-hero { position: relative; overflow: hidden; }
 .cat-hero__strip { display: flex; height: 6px; }
 .cat-hero__strip span { flex: 1; }
 .cat-hero__title { font-family: var(--font-display); font-size: 48px; color: var(--white); line-height: 1.1; margin: 40px 0 16px; }
@@ -658,7 +659,7 @@ img.wall-tile__img { height: auto; }
 /* ==========================================================================
    Paint Calculator page
    ========================================================================== */
-.calc-hero { background: var(--bg-black); position: relative; }
+.calc-hero { position: relative; }
 .calc-hero__stripe { display: flex; height: 6px; }
 .calc-hero__stripe span { flex: 1; }
 .calc-hero__title { font-family: var(--font-display); font-size: 40px; color: var(--white); line-height: 1.15; margin: 32px 0 16px; }
