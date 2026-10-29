@@ -9,6 +9,38 @@
     window.addEventListener("scroll", onScroll, { passive: true });
   }
 
+  /* Product pages: 3D tilt on the tin, shine mask, scroll reveals */
+  var stage = document.querySelector(".pd-stage[data-tilt]");
+  var reduced = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  if (stage) {
+    var tin = stage.querySelector("img");
+    if (tin) stage.style.setProperty("--pd-mask", "url(\"" + tin.getAttribute("src") + "\")");
+    if (!reduced && window.matchMedia("(hover: hover) and (pointer: fine)").matches && tin) {
+      stage.addEventListener("pointermove", function (e) {
+        var r = stage.getBoundingClientRect();
+        var x = (e.clientX - r.left) / r.width - 0.5, y = (e.clientY - r.top) / r.height - 0.5;
+        tin.style.setProperty("--ry", (x * 22).toFixed(1) + "deg");
+        tin.style.setProperty("--rx", (-y * 16).toFixed(1) + "deg");
+      });
+      stage.addEventListener("pointerleave", function () {
+        tin.style.setProperty("--ry", "0deg"); tin.style.setProperty("--rx", "0deg");
+      });
+    }
+  }
+  var revealEls = document.querySelectorAll(".pd-info__eyebrow, .pd-info__desc, .pd-specs__item, .pd-info h3, .pd-features li, .pd-cta-group");
+  if (revealEls.length && "IntersectionObserver" in window && !reduced) {
+    document.documentElement.classList.add("js-reveal");
+    var groupIndex = new Map();
+    revealEls.forEach(function (el) {
+      var key = el.parentElement; var i = groupIndex.get(key) || 0; groupIndex.set(key, i + 1);
+      el.classList.add("pd-reveal"); el.style.setProperty("--d", (i * 0.08).toFixed(2) + "s");
+    });
+    var io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (en) { if (en.isIntersecting) { en.target.classList.add("is-in"); io.unobserve(en.target); } });
+    }, { threshold: 0.15, rootMargin: "0px 0px -40px 0px" });
+    revealEls.forEach(function (el) { io.observe(el); });
+  }
+
   /* Nav drawer */
   var navOpen = document.querySelector("[data-nav-open]");
   var navClose = document.querySelector("[data-nav-close]");
