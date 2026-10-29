@@ -32,18 +32,18 @@ Calculator.
 | 2 | Pinkwood Primer | `images/products/pinkwood-primer.webp` ✅ |
 | 3 | Universal Undercoat | `images/products/universal-undercoat.jpg` |
 | 4 | Anti-Rust Metal (Red Oxide) Primer | `images/products/anti-rust-metal-red-oxide-primer.jpg` |
-| 5 | Galvanized Iron Primer | `images/products/galvanized-iron-primer.jpg` |
+| 5 | Galvanized Iron Primer | `images/products/galvanized-iron-primer.webp` ✅ |
 | 6 | Sanding Sealer | `images/products/sanding-sealer.webp` ✅ |
 | 7 | Damp Guard+ | `images/products/damp-guard.jpg` |
 | 8 | Liquid Rubber | `images/products/liquid-rubber.jpg` |
 | 9 | Bonding Liquid | `images/products/bonding-liquid.jpg` |
-| 10 | Wallshield | `images/products/wallshield.jpg` |
-| 11 | Silkshield | `images/products/silkshield.jpg` |
+| 10 | Wallshield | `images/products/wallshield.webp` ✅ |
+| 11 | Silkshield | `images/products/silkshield.webp` ✅ |
 | 12 | Shieldtex | `images/products/shieldtex.webp` ✅ |
 | 13 | Roof Paint | `images/products/roof-paint.jpg` |
 | 14 | Premium Acrylic PVA | `images/products/premium-acrylic-pva.jpg` |
 | 15 | Contractors PVA | `images/products/contractors-pva.jpg` |
-| 16 | Ceiling White | `images/products/ceiling-white.jpg` |
+| 16 | Ceiling White | `images/products/ceiling-white.webp` ✅ |
 | 17 | Aqua Glow | `images/products/aqua-glow.webp` ✅ |
 | 18 | Super Gloss Enamel | `images/products/super-gloss-enamel.webp` ✅ |
 | 19 | Eggshell Enamel | `images/products/eggshell-enamel.jpg` |
@@ -55,5 +55,5 @@ Calculator.
 | 25 | Polyurethane Enamel | `images/products/polyurethane-enamel.jpg` |
 | 26 | Epoxy Enamel | `images/products/epoxy-enamel.jpg` |
 | 27 | Iron Clad | `images/products/iron-clad.jpg` |
-| 28 | Road Marking Paint | `images/products/road-marking-paint.jpg` |
+| 28 | Road Marking Paint | `images/products/road-marking-paint.webp` ✅ |
 | 29 | Schoolboard Paint | `images/products/schoolboard-paint.webp` ✅ |
