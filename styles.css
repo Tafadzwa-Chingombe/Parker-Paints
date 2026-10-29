@@ -397,12 +397,12 @@ img.pd-hero__img { width: 220px; height: 220px; }
 @media (max-width: 767px) { .about-hero__watermark { display: none; } }
 @media (min-width: 640px) { .about-hero__title { font-size: 52px; } }
 @media (min-width: 1024px) {
-  .about-hero__inner { grid-template-columns: 1fr 1fr; gap: 0; padding: 50px 40px 0; min-height: clamp(720px, 59.7vw, 860px); }
+  .about-hero__inner { grid-template-columns: 1fr 1fr; gap: 0; padding: 50px 40px 0; min-height: clamp(760px, 66.7vw, 960px); }
   .about-hero__watermark { left: 40px; top: 52px; }
   .about-hero__eyebrow { position: absolute; left: 51px; top: 51px; }
   .about-hero__copy { grid-column: 2; grid-row: 1; padding-top: 50px; }
   .about-hero__title { font-size: 64px; }
-  .about-hero__art { position: absolute; left: 0; top: -20px; max-width: none; width: min(700px, 48.6vw); margin: 0; }
+  .about-hero__art { position: absolute; left: 0; top: min(120px, 8.3vw); max-width: none; width: min(700px, 48.6vw); margin: 0; }
 }
 
 /* Our Promise: navy panel, tab badge on its edge, four white icon circles */
