@@ -700,7 +700,7 @@ img.wall-tile__img { height: auto; }
 .calc-stepper label span { display: block; font-family: var(--font-ui); font-size: 10.5px; color: var(--text-muted); font-weight: 400; margin-top: 2px; }
 .calc-stepper > div { display: flex; align-items: center; justify-content: space-between; margin-top: 10px; }
 .calc-stepper button { width: 32px; height: 32px; border-radius: 7px; border: 1px solid var(--bg-grey); background: var(--white); font-size: 16px; color: var(--navy); }
-.calc-stepper span:not([class]) { font-family: var(--font-label); font-weight: 700; font-size: 15px; }
+.calc-stepper span:not([class]) { display: inline-block; font-family: var(--font-label); font-weight: 700; font-size: 15px; }
 .calc-option-row { display: flex; flex-wrap: wrap; gap: 12px; }
 .calc-option { flex: 1; min-width: 140px; background: var(--bg-cream-2); border: 1px solid var(--bg-grey); border-radius: 10px; padding: 14px; font-family: var(--font-ui); font-size: 14px; color: var(--text-body); }
 .calc-option.is-active { background: #fff4f0; border-color: var(--orange); color: var(--navy); font-weight: 600; }
@@ -1132,3 +1132,68 @@ h1, h2, h3, h4, h5 { overflow-wrap: break-word; }
 .pd-specs > * { min-width: 0; }
 .pd-specs__item span { overflow-wrap: anywhere; }
 @media (max-width: 420px) { .pd-specs { gap: 8px; } .pd-specs__item { padding: 14px 6px; } .pd-specs__item span { font-size: 13px; } }
+
+/* ==========================================================================
+   Site-wide interaction layer: click ripples, scroll reveals, hover states
+   for every remaining card / control, count-ups and live-value pulses.
+   ========================================================================== */
+/* Click ripple (span injected by main.js at the pointer) */
+:where(.has-ripple) { position: relative; overflow: hidden; isolation: isolate; }
+.ripple { position: absolute; border-radius: 50%; pointer-events: none; z-index: 5;
+  width: var(--rs); height: var(--rs); left: var(--rx); top: var(--ry); transform: translate(-50%, -50%) scale(0);
+  background: currentColor; opacity: .22; animation: ripple .6s cubic-bezier(.2,.8,.2,1) forwards; }
+@keyframes ripple { to { transform: translate(-50%, -50%) scale(1); opacity: 0; } }
+
+/* Generic scroll reveal (armed by main.js; content visible without JS) */
+.js-reveal .reveal { opacity: 0; transform: translateY(24px); transition: opacity .7s cubic-bezier(.2,.8,.2,1), transform .7s cubic-bezier(.2,.8,.2,1); transition-delay: var(--d, 0s); }
+.js-reveal .reveal.is-in { opacity: 1; transform: none; }
+.js-reveal .reveal--zoom { transform: scale(.94); }
+.js-reveal .reveal--zoom.is-in { transform: none; }
+
+/* Shared transitions for newly interactive pieces */
+.team-card, .team-card__img, .team-card__caption, .faq-item, .contact-info-row, .calc-stat, .calc-total, .room-card,
+.combo-card__swatches span, .swatch-card__color, .tintable-banner, .cat-info-callout, .promise-item, .catalogue-cta__checklist li,
+.cat-stats div, .calc-hero__pills span, .newsletter-form input, .contact-form-card input, .contact-form-card textarea,
+.calc-input > div, .challenge-collage img, .solution-art img, .testimonial-card__avatar, .eyebrow--rule::after {
+  transition: transform .3s cubic-bezier(.2,.8,.2,1), box-shadow .3s, background-color .25s, border-color .25s, color .25s, flex-grow .35s cubic-bezier(.2,.8,.2,1), filter .3s;
+}
+
+/* Form fields: hover + focus glow */
+.contact-form-card input:focus, .contact-form-card textarea:focus, .newsletter-form input:focus, .calc-input > div:focus-within {
+  outline: none; border-color: var(--blue); box-shadow: 0 0 0 4px rgba(28,85,224,0.15);
+}
+
+/* Live value pulse (calculator results, steppers) */
+@keyframes value-pop { 0% { transform: scale(1); } 40% { transform: scale(1.12); } 100% { transform: scale(1); } }
+.is-updated { animation: value-pop .4s cubic-bezier(.3,1.5,.5,1); }
+
+.team-card { cursor: default; }
+
+@media (hover: hover) and (pointer: fine) {
+  .team-card:hover .team-card__img { transform: scale(1.05); }
+  .team-card:hover .team-card__caption { transform: translateY(-4px); box-shadow: 0 -10px 24px -12px rgba(0,0,0,0.35); }
+  .faq-item:hover { border-color: var(--blue); box-shadow: 0 12px 26px -16px rgba(28,85,224,0.45); transform: translateY(-2px); }
+  .contact-info-row:hover { transform: translateX(6px); }
+  .calc-stat:hover, .calc-total:hover { transform: translateY(-3px); box-shadow: 0 14px 26px -16px rgba(0,0,0,0.35); }
+  .room-card:not(.room-card--add):hover { transform: translateY(-4px); box-shadow: 0 18px 30px -18px rgba(25,56,98,0.45); }
+  .combo-card:hover .combo-card__swatches span:hover { flex-grow: 2.2; }
+  .swatch-card:hover .swatch-card__color { filter: saturate(1.15) brightness(1.04); }
+  .tintable-banner:hover, .cat-info-callout:hover { transform: translateY(-3px); box-shadow: 0 18px 34px -20px rgba(25,56,98,0.6); }
+  .promise-item:hover p { color: var(--gold); }
+  .catalogue-cta__checklist li:hover { transform: translateX(6px); color: var(--white); }
+  .cat-stats div:hover { transform: translateY(-3px); }
+  .cat-stats div:hover b { color: var(--orange); }
+  .calc-hero__pills span:hover { transform: translateY(-2px); background: rgba(255,255,255,0.14); }
+  .contact-form-card input:hover, .contact-form-card textarea:hover, .newsletter-form input:hover, .calc-input > div:hover { border-color: #9fb4e8; }
+  .challenge-collage:hover img, .solution-art:hover img { transform: scale(1.02); }
+  .testimonial-card:hover .testimonial-card__avatar { transform: scale(1.1) rotate(-6deg); }
+  .feature-split:hover .eyebrow--rule::after { width: 96px; }
+}
+/* Touch: press feedback on the remaining cards */
+.team-card:active, .faq-item:active, .room-card:active, .combo-card:active, .swatch-card:active, .testimonial-card:active, .calc-stat:active { transform: scale(.985); }
+
+@media (prefers-reduced-motion: reduce) {
+  .js-reveal .reveal { opacity: 1 !important; transform: none !important; }
+  .ripple { display: none; }
+  .is-updated { animation: none !important; }
+}

@@ -41,6 +41,89 @@
     revealEls.forEach(function (el) { io.observe(el); });
   }
 
+  /* ---- Site-wide interactions ---- */
+  var motionOK = !(window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches);
+
+  /* Click ripple on buttons, controls and cards */
+  var rippleSel = ".btn, .chip, .calc-option, .pill-toggle button, .family-picker__item, .calc-stepper button, " +
+    ".newsletter-form button, .wall-tile, .showcase-card, .swatch-card, .combo-card, .room-card--add, .faq-item__q, " +
+    ".footer-social a, .nav-toggle, .contact-map__link, .testimonial-card, .team-card";
+  if (motionOK) {
+    document.querySelectorAll(rippleSel).forEach(function (el) { el.classList.add("has-ripple"); });
+    document.addEventListener("pointerdown", function (e) {
+      var el = e.target.closest && e.target.closest(".has-ripple"); if (!el) return;
+      var r = el.getBoundingClientRect(), size = Math.max(r.width, r.height) * 2.2;
+      var dot = document.createElement("span"); dot.className = "ripple";
+      dot.style.setProperty("--rs", size + "px");
+      dot.style.setProperty("--rx", (e.clientX - r.left) + "px");
+      dot.style.setProperty("--ry", (e.clientY - r.top) + "px");
+      el.appendChild(dot);
+      dot.addEventListener("animationend", function () { dot.remove(); });
+    });
+  }
+
+  /* Scroll reveals for sections and cards on every page */
+  var revealSel = ".section-header, .showcase-card, .wall-tile, .swatch-card, .combo-card, .testimonial-card, .team-card, " +
+    ".promise-item, .faq-item, .feature-row, .feature-split__title, .feature-split__intro, .feature-split .eyebrow, " +
+    ".catalogue-cta__inner > *, .contact-form-card, .contact-info-card, .contact-map, .calc-panel, .calc-results, " +
+    ".room-card, .tintable-banner, .cat-info-callout, .contact-band, .flagship-cta .about-container, .team-section__header, " +
+    ".combos__title, .combos__sub, .testimonials__header, .calc-faq, .wall-hero .container > *";
+  var zoomSel = ".challenge-collage, .solution-art";
+  var gen = Array.prototype.filter.call(document.querySelectorAll(revealSel + ", " + zoomSel), function (el) {
+    // skip product-page items (own reveal) and anything hidden at load (e.g. a closed calculator mode)
+    return !el.closest(".pd-info") && el.getClientRects().length > 0;
+  });
+  if (gen.length && motionOK && "IntersectionObserver" in window) {
+    document.documentElement.classList.add("js-reveal");
+    var idx = new Map();
+    gen.forEach(function (el) {
+      var k = el.parentElement, i = idx.get(k) || 0; idx.set(k, i + 1);
+      el.classList.add("reveal"); if (el.matches(zoomSel)) el.classList.add("reveal--zoom");
+      el.style.setProperty("--d", ((i % 6) * 0.07).toFixed(2) + "s");
+    });
+    var settle = function (el) {   // hand control back to hover/press styles once revealed
+      el.classList.remove("reveal", "reveal--zoom", "is-in"); el.style.removeProperty("--d");
+    };
+    var gio = new IntersectionObserver(function (entries) {
+      entries.forEach(function (en) {
+        if (!en.isIntersecting) return;
+        var el = en.target; gio.unobserve(el); el.classList.add("is-in");
+        var done = false, finish = function () { if (!done) { done = true; settle(el); } };
+        el.addEventListener("transitionend", function (ev) { if (ev.target === el && ev.propertyName === "opacity") finish(); });
+        setTimeout(finish, 1500);
+      });
+    }, { threshold: 0.12, rootMargin: "0px 0px -40px 0px" });
+    gen.forEach(function (el) { gio.observe(el); });
+  }
+
+  /* Count-up numbers (Colour Catalogue stats) */
+  var counters = document.querySelectorAll(".cat-stats b");
+  if (counters.length && motionOK && "IntersectionObserver" in window) {
+    var cio = new IntersectionObserver(function (entries) {
+      entries.forEach(function (en) {
+        if (!en.isIntersecting) return; cio.unobserve(en.target);
+        var el = en.target, target = parseInt(el.textContent, 10); if (isNaN(target)) return;
+        var start = null, dur = 1100;
+        var tick = function (t) {
+          if (start === null) start = t; var p = Math.min((t - start) / dur, 1);
+          el.textContent = Math.round(target * (1 - Math.pow(1 - p, 3)));
+          if (p < 1) requestAnimationFrame(tick);
+        };
+        el.textContent = "0"; requestAnimationFrame(tick);
+      });
+    }, { threshold: 0.6 });
+    counters.forEach(function (el) { if (/^\d+$/.test(el.textContent.trim())) cio.observe(el); });
+  }
+
+  /* Pulse calculator values when they change */
+  if (motionOK && "MutationObserver" in window) {
+    document.querySelectorAll(".calc-results b, .calc-stepper span:not([class]), .room-totals b").forEach(function (el) {
+      new MutationObserver(function () {
+        el.classList.remove("is-updated"); void el.offsetWidth; el.classList.add("is-updated");
+      }).observe(el, { childList: true, characterData: true, subtree: true });
+    });
+  }
+
   /* Nav drawer */
   var navOpen = document.querySelector("[data-nav-open]");
   var navClose = document.querySelector("[data-nav-close]");
