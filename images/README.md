@@ -33,27 +33,27 @@ Calculator.
 | 3 | Universal Undercoat | `images/products/universal-undercoat.jpg` |
 | 4 | Anti-Rust Metal (Red Oxide) Primer | `images/products/anti-rust-metal-red-oxide-primer.jpg` |
 | 5 | Galvanized Iron Primer | `images/products/galvanized-iron-primer.jpg` |
-| 6 | Sanding Sealer | `images/products/sanding-sealer.jpg` |
+| 6 | Sanding Sealer | `images/products/sanding-sealer.webp` ✅ |
 | 7 | Damp Guard+ | `images/products/damp-guard.jpg` |
 | 8 | Liquid Rubber | `images/products/liquid-rubber.jpg` |
 | 9 | Bonding Liquid | `images/products/bonding-liquid.jpg` |
 | 10 | Wallshield | `images/products/wallshield.jpg` |
 | 11 | Silkshield | `images/products/silkshield.jpg` |
-| 12 | Shieldtex | `images/products/shieldtex.jpg` |
+| 12 | Shieldtex | `images/products/shieldtex.webp` ✅ |
 | 13 | Roof Paint | `images/products/roof-paint.jpg` |
 | 14 | Premium Acrylic PVA | `images/products/premium-acrylic-pva.jpg` |
 | 15 | Contractors PVA | `images/products/contractors-pva.jpg` |
 | 16 | Ceiling White | `images/products/ceiling-white.jpg` |
-| 17 | Aqua Glow | `images/products/aqua-glow.jpg` |
+| 17 | Aqua Glow | `images/products/aqua-glow.webp` ✅ |
 | 18 | Super Gloss Enamel | `images/products/super-gloss-enamel.webp` ✅ |
 | 19 | Eggshell Enamel | `images/products/eggshell-enamel.jpg` |
 | 20 | Quick Drying Enamel | `images/products/quick-drying-enamel.jpg` |
 | 21 | Brick Dressing | `images/products/brick-dressing.jpg` |
 | 22 | Wood Varnish | `images/products/wood-varnish.jpg` |
-| 23 | Aluminium Silvershine | `images/products/aluminium-silvershine.jpg` |
+| 23 | Aluminium Silvershine | `images/products/aluminium-silvershine.webp` ✅ |
 | 24 | Polypoxy Primer | `images/products/polypoxy-primer.webp` ✅ |
 | 25 | Polyurethane Enamel | `images/products/polyurethane-enamel.jpg` |
 | 26 | Epoxy Enamel | `images/products/epoxy-enamel.jpg` |
 | 27 | Iron Clad | `images/products/iron-clad.jpg` |
 | 28 | Road Marking Paint | `images/products/road-marking-paint.jpg` |
-| 29 | Schoolboard Paint | `images/products/schoolboard-paint.jpg` |
+| 29 | Schoolboard Paint | `images/products/schoolboard-paint.webp` ✅ |
