@@ -34,25 +34,25 @@ Calculator.
 | 4 | Anti-Rust Metal (Red Oxide) Primer | `images/products/anti-rust-metal-red-oxide-primer.webp` ✅ |
 | 5 | Galvanized Iron Primer | `images/products/galvanized-iron-primer.webp` ✅ |
 | 6 | Sanding Sealer | `images/products/sanding-sealer.webp` ✅ |
-| 7 | Damp Guard+ | `images/products/damp-guard.jpg` |
+| 7 | Damp Guard+ | `images/products/damp-guard.webp` ✅ |
 | 8 | Liquid Rubber | `images/products/liquid-rubber.webp` ✅ |
 | 9 | Bonding Liquid | `images/products/bonding-liquid.webp` ✅ |
 | 10 | Wallshield | `images/products/wallshield.webp` ✅ |
 | 11 | Silkshield | `images/products/silkshield.webp` ✅ |
 | 12 | Shieldtex | `images/products/shieldtex.webp` ✅ |
-| 13 | Roof Paint | `images/products/roof-paint.jpg` |
+| 13 | Roof Paint | `images/products/roof-paint.webp` ✅ |
 | 14 | Premium Acrylic PVA | `images/products/premium-acrylic-pva.webp` ✅ |
 | 15 | Contractors PVA | `images/products/contractors-pva.webp` ✅ |
 | 16 | Ceiling White | `images/products/ceiling-white.webp` ✅ |
 | 17 | Aqua Glow | `images/products/aqua-glow.webp` ✅ |
 | 18 | Super Gloss Enamel | `images/products/super-gloss-enamel.webp` ✅ |
-| 19 | Eggshell Enamel | `images/products/eggshell-enamel.jpg` |
+| 19 | Eggshell Enamel | `images/products/eggshell-enamel.webp` ✅ |
 | 20 | Quick Drying Enamel | `images/products/quick-drying-enamel.webp` ✅ |
 | 21 | Brick Dressing | `images/products/brick-dressing.webp` ✅ |
 | 22 | Wood Varnish | `images/products/wood-varnish.jpg` |
 | 23 | Aluminium Silvershine | `images/products/aluminium-silvershine.webp` ✅ |
 | 24 | Polypoxy Primer | `images/products/polypoxy-primer.webp` ✅ |
-| 25 | Polyurethane Enamel | `images/products/polyurethane-enamel.jpg` |
+| 25 | Polyurethane Enamel | `images/products/polyurethane-enamel.webp` ✅ |
 | 26 | Epoxy Enamel | `images/products/epoxy-enamel.webp` ✅ |
 | 27 | Iron Clad | `images/products/iron-clad.webp` ✅ |
 | 28 | Road Marking Paint | `images/products/road-marking-paint.webp` ✅ |
