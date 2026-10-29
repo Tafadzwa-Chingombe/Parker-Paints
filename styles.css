@@ -463,7 +463,7 @@ img.pd-hero__img { width: 220px; height: 220px; }
 /* Colourful navy "aurora" background, shared by the About flagship band and
    the Products, Colour Catalogue, Paint Calculator and FAQ heroes (no
    isolation on the heroes: they hold the fixed header) */
-.flagship-cta, .wall-hero, .cat-hero, .calc-hero, .faq-hero {
+.flagship-cta, .wall-hero, .cat-hero, .calc-hero, .faq-hero, .page-contact .contact-band {
   background-color: #0f2342;
   background-image:
     /* paint-colour stripe along the top edge */
@@ -489,7 +489,7 @@ img.pd-hero__img { width: 220px; height: 220px; }
 .flagship-cta .about-container { position: relative; }
 @keyframes flagship-drift { to { transform: translate(-120px, 80px) scale(1.2); } }
 @media (max-width: 767px) {
-  .flagship-cta, .wall-hero, .cat-hero, .calc-hero, .faq-hero {
+  .flagship-cta, .wall-hero, .cat-hero, .calc-hero, .faq-hero, .page-contact .contact-band {
     background-image:
       linear-gradient(90deg, var(--orange), #f2547d, #9b4fd6, var(--blue), #12b3a6, var(--gold)),
       radial-gradient(70% 45% at 100% 0%, rgba(254,152,50,0.7) 0%, rgba(242,84,125,0.35) 50%, rgba(242,84,125,0) 80%),
@@ -580,11 +580,14 @@ img.team-card__img { height: auto; }
 .contact-info-icon { width: 40px; height: 40px; border-radius: 50%; background: var(--bg-tint); color: var(--blue); display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
 .contact-info-row label { display: block; font-family: var(--font-ui); font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px; color: var(--text-muted); margin-bottom: 4px; }
 .contact-info-row a, .contact-info-row span { font-family: var(--font-ui); font-size: 15px; color: var(--navy); }
-.contact-map { position: relative; border-radius: var(--r-lg); overflow: hidden; aspect-ratio: 16/10; }
-.contact-map__bg { position: absolute; inset: 0; }
-.contact-map__caption { position: absolute; left: 20px; bottom: 20px; color: var(--white); display: flex; flex-direction: column; gap: 2px; }
-.contact-map__caption b { font-family: var(--font-ui); font-size: 15px; }
-.contact-map__caption span { font-family: var(--font-ui); font-size: 12px; opacity: 0.75; }
+.contact-map { position: relative; border-radius: var(--r-lg); overflow: hidden; aspect-ratio: 16/10; background: var(--bg-tint); }
+.contact-map__frame { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; display: block; }
+.contact-map__link {
+  position: absolute; right: 12px; bottom: 12px; z-index: 1; background: var(--white); color: var(--navy);
+  font-family: var(--font-ui); font-weight: 600; font-size: 13px; padding: 10px 14px; border-radius: 999px;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.18);
+}
+@media (hover: hover) { .contact-map__link:hover { background: var(--navy); color: var(--white); } }
 
 /* ==========================================================================
    Colour Catalogue page
@@ -1045,3 +1048,6 @@ h1, h2, h3, h4, h5 { overflow-wrap: break-word; }
   .calc-faq__link { display: inline-block; padding: 10px 0; }
   .room-card__remove { padding: 10px 0; }
 }
+
+/* Contact page: the flagship aurora background on the vision band (static) */
+.page-contact .contact-band { animation: none; }
