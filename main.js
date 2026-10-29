@@ -1,6 +1,14 @@
 (function () {
   "use strict";
 
+  /* Header: darker glass once the page has scrolled */
+  var header = document.querySelector(".site-header");
+  if (header) {
+    var onScroll = function () { header.classList.toggle("is-scrolled", window.scrollY > 10); };
+    onScroll();
+    window.addEventListener("scroll", onScroll, { passive: true });
+  }
+
   /* Nav drawer */
   var navOpen = document.querySelector("[data-nav-open]");
   var navClose = document.querySelector("[data-nav-close]");
