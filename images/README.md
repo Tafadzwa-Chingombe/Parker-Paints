@@ -51,7 +51,7 @@ Calculator.
 | 21 | Brick Dressing | `images/products/brick-dressing.jpg` |
 | 22 | Wood Varnish | `images/products/wood-varnish.jpg` |
 | 23 | Aluminium Silvershine | `images/products/aluminium-silvershine.jpg` |
-| 24 | Polypoxy Primer | `images/products/polypoxy-primer.jpg` |
+| 24 | Polypoxy Primer | `images/products/polypoxy-primer.webp` ✅ |
 | 25 | Polyurethane Enamel | `images/products/polyurethane-enamel.jpg` |
 | 26 | Epoxy Enamel | `images/products/epoxy-enamel.jpg` |
 | 27 | Iron Clad | `images/products/iron-clad.jpg` |
