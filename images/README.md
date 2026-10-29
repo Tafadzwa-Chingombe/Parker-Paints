@@ -45,7 +45,7 @@ Calculator.
 | 15 | Contractors PVA | `images/products/contractors-pva.jpg` |
 | 16 | Ceiling White | `images/products/ceiling-white.jpg` |
 | 17 | Aqua Glow | `images/products/aqua-glow.jpg` |
-| 18 | Super Gloss Enamel | `images/products/super-gloss-enamel.jpg` |
+| 18 | Super Gloss Enamel | `images/products/super-gloss-enamel.webp` ✅ |
 | 19 | Eggshell Enamel | `images/products/eggshell-enamel.jpg` |
 | 20 | Quick Drying Enamel | `images/products/quick-drying-enamel.jpg` |
 | 21 | Brick Dressing | `images/products/brick-dressing.jpg` |
