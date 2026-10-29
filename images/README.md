@@ -16,9 +16,9 @@ larger), scene photos landscape (1600 px wide).
 | `images/solution-artwork.webp` | Home page, The Solution artwork | ✅ Done |
 | `images/about-hero-artwork.webp` | About page hero artwork | ✅ Done |
 | `images/team-1.webp` | About page, team card 1 | ✅ Done: Mohammed Lunat |
-| `images/team-2.jpg` | About page, team card 2 | Portrait (square) |
-| `images/team-3.jpg` | About page, team card 3 | Portrait (square) |
-| `images/team-4.jpg` | About page, team card 4 | Portrait (square) |
+| `images/team-2.webp` | About page, team card 2 | ✅ Photo done, name and title still needed |
+| `images/team-3.webp` | About page, team card 3 | ✅ Photo done, name and title still needed |
+| `images/team-4.webp` | About page, team card 4 | ✅ Photo done, name and title still needed |
 
 ## Product photos (`images/products/`) — one per product, square tin shot
 
